@@ -4,11 +4,11 @@ import {
 	BrowserRouter as Router,
 	Route,
 } from 'react-router-dom';
-import Home from './components/pages/home';
-import Register from './components/pages/register';
-import Login from './components/pages/login';
+import Home from '../pages/home';
+import Register from '../pages/register';
+import Login from '../pages/login';
 
-class App extends Component {
+class MyRoute extends Component {
 
 	render() {
 		return (
