@@ -4,6 +4,7 @@ mkdir constants helpers pages reducers resources services styles vendor i18n act
 
 Plugins
 
+ESLint
 install it using in the global for JavaScript
 package
 npm install -g eslint
@@ -17,6 +18,11 @@ eslint --init
 Choose airbnb for react
 answer popular question
 restart vs code 
+
+Babel
+create .babelrc file
+presets run in opposite order
+
 
 
 
