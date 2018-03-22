@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Login extends Component {
-	render() {
-		return (
-			<div>
+    render() {
+        return (
+            <div>
                 Login
-			</div>
-		);
-	}
+            </div>
+        );
+    }
 }
 
 function mapStateToProps(state) {
-	return {
+    return {
 
-	};
+    };
 }
 
 export default connect(
-	mapStateToProps
+    mapStateToProps
 )(Login);

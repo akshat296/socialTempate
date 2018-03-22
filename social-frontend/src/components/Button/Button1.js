@@ -3,18 +3,14 @@ import { connect } from 'react-redux';
 
 
 
-class Register extends Component {
+class Button1 extends Component {
     render() {
         return (
             <div>
-                Test Register
+                <button>Submit</button>
             </div>
         );
     }
 }
-function mapStateToProps(state) {
-    return {
 
-    };
-}
-export default connect(mapStateToProps)(Register);
+export default Button1;

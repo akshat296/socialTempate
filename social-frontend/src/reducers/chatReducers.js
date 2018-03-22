@@ -1,12 +1,12 @@
 export default function loginReducers(state ={}, action)
 {
-	switch(action.type)
-	{
-	case 'SUCCESS': 
-		return {type:action.type,chat:action.payload};
-	case 'ERROR':
-		return {type:action.type,chat:action.payload};
-	default :
-		return state;
-	}
+    switch(action.type)
+    {
+    case 'SUCCESS': 
+        return {type:action.type,chat:action.payload};
+    case 'ERROR':
+        return {type:action.type,chat:action.payload};
+    default :
+        return state;
+    }
 } 
