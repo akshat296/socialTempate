@@ -10,11 +10,11 @@ class Bar extends Component {
         this.displayName = 'SideBarExample';
         this.state = {
             barOpened: false,
-            duration: 150,
+            duration: 300,
             fx: 'cubic-bezier(0, 1, 0.85, 1)',
             mode: 'over',
             side: 'left',
-            size: 500,
+            size: 300,
             tolerance: 70,
             topBarIncluded: true,
             touch: true,
@@ -58,7 +58,7 @@ class Bar extends Component {
                     </div>
                     <div><p className='brand-name'>Fingers Speedsters</p></div>
                 </div>
-                <div className='center'><input type="text" size="40" placeholder="Search Website" value=""/></div>
+                <div className='center'><input type="text" size="40" placeholder="Search Website" value="" /></div>
                 <div className='right'>
                     <ul id='navlist' >
                         <li>
@@ -67,13 +67,13 @@ class Bar extends Component {
                             </a>
                         </li>
                         <li>
-                            <a  href="/login">Login</a>
+                            <a href="/login">Login</a>
                         </li>
                         <li>
                             <a href="/register">Register</a>
                         </li>
                     </ul>
-
+                    {/* changes to be made for responsive design */}
 
                     <button className="navbar-toggler red" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />

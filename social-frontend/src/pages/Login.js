@@ -5,18 +5,12 @@ class Login extends Component {
     render() {
         return (
             <div>
-                Login
+                <input type="text"  value="test" placeholder="Login" />
+                <input type="password" value="password" placeholder="Password" />
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    return {
 
-    };
-}
-
-export default connect(
-    mapStateToProps
-)(Login);
+export default (Login);
