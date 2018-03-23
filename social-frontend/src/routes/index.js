@@ -12,7 +12,7 @@ class MyRoute extends Component {
     render() {
         return (
             <Router>
-                <div className="parent">
+                <div>
                     <Route exact path = "/" component = {Home} />
                     <Route path = "/register" component = {Register} />
                     <Route path = "/login" component = {Login} />

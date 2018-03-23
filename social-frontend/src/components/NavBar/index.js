@@ -22,8 +22,8 @@ class NavBar extends Component {
         return (
             <nav className="navbar navbar-inverse">
                 <nav className="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
-                    <span className="navbar-toggler-icon leftmenutrigger" style={styles.space} onClick={this.sidebar} />
-                    <a className="navbar-brand" href="/">Fingers Speedsters</a>
+                    <span className="navbar-toggler-icon leftmenutrigger" style={styles.space} />
+                    
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
