@@ -6,7 +6,7 @@ class NavBar extends Component {
     constructor(props) {
         super();
         this.state = {
-            responsiveHeight: '50px',
+            responsiveHeight: ' contract',
             
         };
 
@@ -16,16 +16,16 @@ class NavBar extends Component {
 
         if (x.className === 'navlist') {
             x.className += ' responsive';
-            this.setState({ responsiveHeight: '200px' });
+            this.setState({ responsiveHeight: ' expanded' });
 
         } else {
             x.className = 'navlist';
-            this.setState({ responsiveHeight: '50px' });
+            this.setState({ responsiveHeight: ' contract' });
         }
     }
 
     componentDidMount() {
-        this.setState({ flag: true })
+        this.setState({ flag: true });
     }
 
     render() {
@@ -33,14 +33,14 @@ class NavBar extends Component {
             size: {
                 fontSize: '20px',
             },
-            topBarSize: {
-                height: this.state.responsiveHeight
+            topBar: {
+                className: 'topBar' + this.state.responsiveHeight
             }
         };
         
         
         return (
-            <div className='topBar' style={styles.topBarSize}>
+            <div className={styles.topBar.className}>
                 <div className='left'>
                     <div
                         className={this.props.navIcon}

@@ -61,6 +61,13 @@
 
         
     }
+    .expanded{
+        height:200px;
+
+    }
+    .contract{
+        height:50px !important;
+    }
     
     .navlist .links{
         display:none;
@@ -80,6 +87,9 @@
         
         
     }
+    .navlist .resicon  {
+        display:block;
+    }
    
     .navlist .resicon a.icon:hover {
         
@@ -87,9 +97,6 @@
         
         
     }
-}
-
-@media screen and (max-width: 600px) {
     .navlist.responsive {
         position: absolute;
         width: 100%;
@@ -104,14 +111,7 @@
         display:block;
         padding-right:0;
     }
-    .navlist .resicon  {
-        display:block;
-    }
-     .navlist .resicon .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
+  
     .navlist.responsive a {
         float: none;
         display: block;
