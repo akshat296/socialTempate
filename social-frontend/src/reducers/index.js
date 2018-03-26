@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import chat from './chatReducers';
+import word from './wordReducers';
 
-const rootReducer = combineReducers({chat});
+const rootReducer = combineReducers({word});
 export default rootReducer;
