@@ -1,0 +1,12 @@
+.wrapper {
+    display: grid;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.keyboard-wrapper {
+    margin: 0 auto !important;
+}

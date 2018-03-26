@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 class menu extends Component {
+    
     render() {
         return (
             <div>

@@ -2,7 +2,46 @@
 .ui-keyboard-keyset {
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
+    position: absolute;
+    bottom:5%;
+    
+    margin-top:0 auto;
+    left:25%;
+    right:25%;
+    
+
    
+   
+  }
+  .keyboard-wrapper{
+    margin:0 auto !important;
+    }
+  @media screen and (max-width: 1600px) {
+    .ui-keyboard-keyset {
+      position: absolute;
+      bottom:0;
+      margin:0 auto;
+      left:0;
+      right:0;
+      bottom:5%;
+
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .ui-keyboard-space {
+      width: 5%;
+    }
+    .ui-keyboard-button {
+      font-size: 1em;
+      margin: 0.1em;
+      border: none;
+      border-radius: 2px;
+      bottom:5%;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2em 0.3em;
+      cursor: pointer;
+    }
   }
   .ui-keyboard-button {
     font-size: 1em;

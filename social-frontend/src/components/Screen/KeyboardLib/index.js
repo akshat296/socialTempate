@@ -133,11 +133,11 @@ class VirtualKeyboard extends Component {
 
     if (this.props.options.type === 'textarea')
       element = (
-        <textarea ref={node => this.keyboardRef = node} value = { this.state.value } onChange = { this.handleChange } {...other}/>
+        <textarea ref={node => this.keyboardRef = node} style={{margin:"0 auto",width:"100%",fontSize:"30px"}} rows="1" cols="98" value = { this.state.value } onChange = { this.handleChange } {...other}/>
       );
     else
       element = (
-        <input ref={node => this.keyboardRef = node} value = { this.state.value } onChange = { this.handleChange } {...other} />
+        <input ref={node => this.keyboardRef = node} style={{margin:"0 auto",width:"100%",fontSize:"30px"}}  rows="12" cols="98" value = { this.state.value } onChange = { this.handleChange } {...other} />
       );
 
     return (

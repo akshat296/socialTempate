@@ -1,15 +1,17 @@
 import * as React from 'react';
 import VirtualKeyboard from '../KeyboardLib';
 import jQuery from 'jquery';
+import {checkWord} from '../../WordGenerator/getword';
+import './index.css';
 export default class ScreenKeyboard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { textarea: "This is some sample text area input", inputfield: "Input field" };
+        this.state = { textarea: "Write Some Text", inputfield: "Input field" };
         this.onTextareaChanged = this.onTextareaChanged.bind(this);
         this.onInputChanged = this.onInputChanged.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-
-
+        this.index = 0;
+        this.word = '';
     }
 
     onTextareaChanged(newState) {
@@ -20,9 +22,12 @@ export default class ScreenKeyboard extends React.Component {
         this.setState({ inputfield: newState });
     }
     handleKeyPress(event) {
-        let character
+        let character;
+        
+        
+        // Add backspace, shift and tab key
 
-        if (event.key.match(/[a-zA-Z\-]/g)) {
+        if (event.key.match(/[a-zA-Z-]/g)) {
             character = event.key;
         } else {
             character = event.key.charCodeAt(0);
@@ -31,7 +36,16 @@ export default class ScreenKeyboard extends React.Component {
         setTimeout(() => {
             jQuery('*').removeClass('ui-keyboard-button-color');
         }, 100);
-
+        if (event.key.match(/[a-zA-Z\-,"';:\{\}\.\~\`\?.()]/)) {
+            this.word = this.word + event.key;
+           
+        }
+        if(event.key.charCodeAt(0)===32){
+            
+            checkWord(this.word,this.index);
+            this.index++;
+            this.word='';
+        }
 
     }
 
@@ -71,8 +85,9 @@ export default class ScreenKeyboard extends React.Component {
             ]
         };
         return <div>
-            <h1>Textarea. {this.state.textarea}</h1>
-            <VirtualKeyboard value={this.state.textarea} name='thetextareaname' options={{ type: 'textarea', usePreview: false, layout: 'qwerty', autoAccept: true, alwaysOpen: false, appendLocally: true, updateOnChange: true, color: 'dark' }} onChange={this.onTextareaChanged} onKeyPress={this.handleKeyPress} />
+          
+            
+            <VirtualKeyboard value={this.state.textarea} name='thetextareaname' options={{ type: 'textarea', usePreview: false, layout: 'qwerty', autoAccept: true, alwaysOpen: false, appendLocally: true, updateOnChange: true, color: 'dark' }} onChange={this.onTextareaChanged} onKeyPress={this.handleKeyPress}/>
         </div>;
     }
 };
