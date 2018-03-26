@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "decouple": "^1.0.1",
     "ghooks": "^2.0.2",
     "jquery": "^3.3.1",
+    "material-ui": "^0.20.0",
+    "material-ui-number-input": "^5.0.24",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-material-ui-keyboard": "^6.2.1",
+    "react-screen-keyboard": "^1.4.1",
     "react-scripts": "1.1.1",
     "react-virtual-keyboard": "^1.0.2"
   },

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Scores from './scores';
-import Menu from './menu';
+import Keyboard from './ScreenKeyboard';
 
 
-class DashBoard extends Component {
+class Screen extends Component {
     render() {
         return (
-            <div>
-                <Scores />
-                <Menu />
+            <div className="wrapper">
+                <Keyboard />
+               
             </div>
         );
     }
@@ -28,4 +27,4 @@ const styles = {
     },
 };
 
-export default DashBoard;
+export default Screen;

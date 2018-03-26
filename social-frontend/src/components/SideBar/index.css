@@ -110,7 +110,7 @@ body {
   left:40%;
   top:10px;
 }
-.topBar>div {
+.topBar > div {
     align-self: left;
     text-align: left;
 }

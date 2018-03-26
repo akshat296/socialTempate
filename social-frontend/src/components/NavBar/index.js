@@ -9,7 +9,6 @@ class NavBar extends Component {
             responsiveHeight: ' contract',
             
         };
-
     }
     responsive() {
         let x = document.getElementById('navlist');

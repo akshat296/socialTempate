@@ -1,0 +1,29 @@
+
+.ui-keyboard-keyset {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+   
+  }
+  .ui-keyboard-button {
+    font-size: 1em;
+    margin: 0.2em;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.7em 1.3em;
+    cursor: pointer;
+  }
+  .ui-keyboard-button:hover {
+    background: rgba(255, 123, 255, 0.6);
+  }
+  .ui-keyboard-button-color {
+    background: rgba(255, 35, 132, 0.4);
+  }
+  .ui-keyboard-space {
+    width: 30%;
+  }
+  .ui-keyboard-spacer {
+    display: inline-block;
+  }
+  

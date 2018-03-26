@@ -1,7 +1,9 @@
 import React from 'react';
-import SideBar from './SideBar';
+import SideBar from './SidebarConfig/SideBar';
 import './index.css';
 import NavBar from '../NavBar';
+import DashBoard from './Dashboard';
+import ExampleKeyboard from '../Screen/';
 class Bar extends React.Component {
 
 
@@ -46,7 +48,7 @@ class Bar extends React.Component {
 
 
         }
-        const bar = (<div className='side'>Amazing SideBar</div>);
+        const bar = (<div className='side'><DashBoard/></div>);
 
         let topBar = (
             <NavBar toggle={this.toggleBar.bind(this)} navIcon={navIconClassName.join(' ')}
@@ -75,7 +77,7 @@ class Bar extends React.Component {
         return (
             <SideBar {...sideBarProps}>
                 {!topBarIncluded && topBar}
-                <div className='main'>Test</div>
+                <div className='main'><ExampleKeyboard/></div>
             </SideBar>
         );
     }
