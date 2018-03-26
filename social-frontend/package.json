@@ -8,7 +8,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
-    "react-side-bar": "^0.3.5",
     "react-virtual-keyboard": "^1.0.2"
   },
   "scripts": {
