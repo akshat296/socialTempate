@@ -13,13 +13,15 @@ const Store = configureStore();
 Store.subscribe(() => {
     console.log('Store Subscription :', Store.getState());
 });
-ReactDOM.render(<BrowserRouter><Provider store={Store}><Routes /></Provider></BrowserRouter>, document.getElementById('root'));
-if (module.hot) {
-    module.hot.accept('./routes', () => {
-        ReactDOM.render(<AppContainer>
-            <BrowserRouter><Provider store={Store}><Routes /></Provider></BrowserRouter>
-        </AppContainer>, document.getElementById('root'))
-    });
-}
- 
+setInterval(ReactDOM.render(<BrowserRouter><Provider store={Store}><Routes /></Provider></BrowserRouter>, document.getElementById('root')),100)
+
+// ReactDOM.render(<BrowserRouter><Provider store={Store}><Routes /></Provider></BrowserRouter>, document.getElementById('root'));
+// if (module.hot) {
+//     module.hot.accept('./routes', () => {
+//         ReactDOM.render(<AppContainer>
+//             <BrowserRouter><Provider store={Store}><Routes /></Provider></BrowserRouter>
+//         </AppContainer>, document.getElementById('root'))
+//     });
+// }
 registerServiceWorker();
+

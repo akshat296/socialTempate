@@ -111,7 +111,7 @@ class VirtualKeyboard extends Component {
   }
 
   handleChange = (event, input) => {
-    if (!input && event && event.target && typeof event.target.value != 'undefined')
+    if (!input && event && event.target && typeof event.target.value !=  'undefined')
       input = event.target.value;
     if (this.props.debug) {
       console.log("Change", input);

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-import keyboard from 'react-virtual-keyboard';
+
 import './index.css';
 class NavBar extends Component {
     constructor(props) {

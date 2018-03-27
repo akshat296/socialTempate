@@ -8,6 +8,7 @@ class Home extends Component {
             <div>
                 <SideBar />
                 <h1>hello world!</h1>
+                <TextBox/>
             </div>
         );
     }

@@ -24,10 +24,10 @@ class WordGenerator extends Component {
            
             return (<span key={"word" + index}> {word} </span>);
         });
-        console.log("hello ",this.props);
-        this.props.words.map((word, index) => {
+        
+        this.props.words.forEach((word, index) => {
            
-            if (splitWords[index] === word) {
+            if (splitWords[index] === word.word) {
                 element[index] = (<span key={"word" + index} className="correct" > {splitWords[index]} </span>);
             }
             else {

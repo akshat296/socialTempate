@@ -23,6 +23,26 @@
             "sourceMaps": true,
             "trace": "sm"
           },
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch",
+            "cwd": "${workspaceRoot}/social-frontend",
+            "args": [],
+            "preLaunchTask": null,
+            "program": "${workspaceRoot}/.vscode/debugger.js",
+            "runtimeExecutable": "/home/thinksysuser/.nvs/chakracore/8.10.0/x64/bin",
+            "runtimeArgs": [
+              "--nolazy",
+              "-TTReplay:ttlog",
+              "-TTBreakFirst"
+            ],
+            "outFiles": [
+              "${workspaceRoot}/.vscode/**/*.bundle"
+            ],
+            "sourceMaps": true,
+            "trace": "sm"
+          },
         {
             
             "type": "chrome",

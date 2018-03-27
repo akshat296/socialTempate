@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class TextBox extends Component {
     render() {
         return (
-            <input type="text" style={styles.container} value="test" placeholder="test" />
+            <div>
+            <input type="text" style={styles.container}  placeholder="test" />
+        </div>
         );
     }
 }
@@ -23,3 +25,4 @@ const styles = {
 };
 
 export default TextBox;
+

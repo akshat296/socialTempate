@@ -30,26 +30,33 @@ class ScreenKeyboard extends React.Component {
     handleKeyPress(event) {
         let character;
 
-
+        console.log('word=>');
         // Add backspace, shift and tab key
+        if (event.key.length === 1) {
+            if (event.key.match(/[a-zA-Z-0-9]/g)) {
+                character = event.key;
+            } else {
+                character = event.key.charCodeAt(0);
+            }
+            jQuery('.ui-keyboard-' + character).addClass('ui-keyboard-button-color');
+            setTimeout(() => {
+                jQuery('*').removeClass('ui-keyboard-button-color');
+            }, 100);
+            if (event.key.match(/[a-zA-Z\-,"';:{}.~`?.()0-9]/)) {
+                this.word = this.word + event.key;
 
-        if (event.key.match(/[a-zA-Z-]/g)) {
-            character = event.key;
-        } else {
-            character = event.key.charCodeAt(0);
+            }
         }
-        jQuery('.ui-keyboard-' + character).addClass('ui-keyboard-button-color');
-        setTimeout(() => {
-            jQuery('*').removeClass('ui-keyboard-button-color');
-        }, 100);
-        if (event.key.match(/[a-zA-Z\-,"';:\{\}\.\~\`\?.()]/)) {
-            this.word = this.word + event.key;
+       
+        if (event.key === "Backspace") {
 
+            this.word = this.word.substring(0, this.word.length-1);
+           
         }
         if (event.key.charCodeAt(0) === 32) {
 
             this.setState({ word: this.word, index: this.index });
-            this.props.getWord(this.word,this.index);
+            this.props.getWord(this.word, this.index);
             this.index++;
             this.word = '';
         }
@@ -94,7 +101,7 @@ class ScreenKeyboard extends React.Component {
         return <div>
 
 
-            <VirtualKeyboard value={this.state.textarea} name='thetextareaname' options={{ type: 'textarea', usePreview: false, layout: 'qwerty', autoAccept: true, alwaysOpen: false, appendLocally: true, updateOnChange: true, color: 'dark' }} onChange={this.onTextareaChanged} onKeyPress={this.handleKeyPress} />
+            <VirtualKeyboard value={this.state.textarea} name='thetextareaname' options={{ type: 'textarea', usePreview: false, layout: 'qwerty', autoAccept: true, alwaysOpen: false, appendLocally: true, updateOnChange: true, color: 'dark' }} onChange={this.onTextareaChanged} onKeyDown={this.handleKeyPress} />
         </div>;
     }
 }
@@ -114,4 +121,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(ScreenKeyboard);
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenKeyboard);

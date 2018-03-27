@@ -1,4 +1,4 @@
-{   
+{
     // Change WorkSpace and skipFiles name Accordingly
     // move this file in the outer directory of ./vscode/launch.json
     // Use IntelliSense to learn about possible attributes.
@@ -8,23 +8,54 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "TTD Enabled Launch",
+            "type": "node-chakracore-time-travel-debugger",
+            "request": "launch",
+            "program": "${workspaceRoot}/social-frontend/index.js",
+            "runtimeExecutable": "/home/thinksysuser/.nvs/node/8.10.0/x64/bin/node",
+            "cwd": "${workspaceRoot}"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Node",
             "program": "${workspaceRoot}/social-frontend/.vscode/debugger.js",
             "runtimeExecutable": "/home/thinksysuser/.nvs/node/8.10.0/x64/bin/node",
+            "stopOnEntry": true,
             "runtimeArgs": [
-              "--break-first",
-              "--replay-debug=${workspaceRoot}/social-frontend/.vscode/logs"
+                "--break-first",
+                "--replay-debug=/tmp/vscode-node-debug2.txt"
             ],
             "outFiles": [
-              "${workspaceRoot}/social-frontend/.vscode/**/*.bundle"
+                "${workspaceRoot}/social-frontend/.vscode/**/*.bundle"
             ],
             "sourceMaps": true,
             "trace": "sm"
-          },
+        },
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch",
+            "cwd": "${workspaceRoot}/social-frontend",
+            "args": [],
+            "stopOnEntry": true,
+            "preLaunchTask": null,
+            "program": "${workspaceRoot}/social-frontend/.vscode/debugger.js",
+            "runtimeExecutable": "../.nvs/chakracore/8.10.0/x64/bin/node",
+            "runtimeArgs": [
+                "--nolazy",
+                "--tt-debug",
+                "--debug"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
             
+            "sourceMaps": true,
+            "trace": "sm",
+            "console": "internalConsole"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Client",
@@ -50,7 +81,6 @@
                 "${workspaceRoot}/snake-backend/lib/**/*.js"
             ]
         },
-        
         {
             "type": "node",
             "request": "launch",
@@ -70,18 +100,16 @@
                 "Client",
                 "Server",
                 "Server-Backend"
-               
             ]
-        }],
-        "compounds": [
-            {
-                "name": "React-Debug",
-                "configurations": [
-                    "Client",
-                    "Node",
-                    
-                   
-                ]
-            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "React-Debug",
+            "configurations": [
+                "Client",
+                "Node",
+            ]
+        }
     ]
 }

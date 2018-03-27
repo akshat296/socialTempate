@@ -4,7 +4,6 @@ npm install sync-request@4.1.0 websocket@1.0.23 flatten-source-map@0.0.2 && mkdi
 */
 
 var PACKAGER = 'localhost:3000'; //CHANGE this to where the package is running
-
 var vm = require('vm');
 var url = require('url');
 var path = require('path');
