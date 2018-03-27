@@ -9,9 +9,16 @@ import { composeWithDevTools } from 'remote-redux-devtools';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-	name: 'MyApp', actionsBlacklist: ['REDUX_STORAGE_SAVE']
+    name: 'MyApp', actionsBlacklist: ['REDUX_STORAGE_SAVE']
 });
 
+
 export default function configureStore(initialState) {
-	return createStore(reducers, composeEnhancers(applyMiddleware(thunk, logger)));
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk, logger)));
+    if (module.hot) {
+        module.hot.accept('../reducers', () =>
+            store.replaceReducer(require('../reducers').default)
+        );
+    }
+    return store;
 }
