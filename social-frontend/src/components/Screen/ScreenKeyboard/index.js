@@ -2,8 +2,10 @@ import * as React from 'react';
 import VirtualKeyboard from '../KeyboardLib';
 import jQuery from 'jquery';
 import { connect } from 'react-redux';
-
+import { getWord } from '../../../actions/wordActions';
+import { bindActionCreators } from 'redux';
 import './index.css';
+
 class ScreenKeyboard extends React.Component {
     constructor(props) {
         super(props);
@@ -46,7 +48,8 @@ class ScreenKeyboard extends React.Component {
         }
         if (event.key.charCodeAt(0) === 32) {
 
-            this.setState({word:this.word,index: this.index});
+            this.setState({ word: this.word, index: this.index });
+            this.props.getWord(this.word,this.index);
             this.index++;
             this.word = '';
         }
@@ -94,12 +97,21 @@ class ScreenKeyboard extends React.Component {
             <VirtualKeyboard value={this.state.textarea} name='thetextareaname' options={{ type: 'textarea', usePreview: false, layout: 'qwerty', autoAccept: true, alwaysOpen: false, appendLocally: true, updateOnChange: true, color: 'dark' }} onChange={this.onTextareaChanged} onKeyPress={this.handleKeyPress} />
         </div>;
     }
-};
-function mapStateToProps(state, ownProps) {
-console.log("testing state ",state);
+}
+function mapStateToProps(state) {
+
     return {
         word: state.word,
-        index:state.index
+        index: state.index
+
     };
 }
-export default connect(mapStateToProps)(ScreenKeyboard);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        getWord
+    }, dispatch);
+
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ScreenKeyboard);

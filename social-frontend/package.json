@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "decouple": "^1.0.1",
+    "flatten-source-map": "0.0.2",
+    "fs": "0.0.1-security",
     "ghooks": "^2.0.2",
     "jquery": "^3.3.1",
     "material-ui": "^0.20.0",
     "material-ui-number-input": "^5.0.24",
+    "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -15,7 +18,13 @@
     "react-virtual-keyboard": "^1.0.2",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "thunk": "0.0.1"
+    "remote-redux-devtools": "^0.5.12",
+    "remotedev-server": "^0.2.4",
+    "sync-request": "^6.0.0",
+    "thunk": "0.0.1",
+    "url": "^0.11.0",
+    "vm": "^0.1.0",
+    "websocket": "^1.0.25"
   },
   "scripts": {
     "start": "react-scripts start",

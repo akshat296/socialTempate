@@ -4,7 +4,14 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { applyMiddleware, compose } from 'redux';
 
+import { composeWithDevTools } from 'remote-redux-devtools';
+
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+	name: 'MyApp', actionsBlacklist: ['REDUX_STORAGE_SAVE']
+});
 
 export default function configureStore(initialState) {
-	return createStore(reducers, compose(applyMiddleware(thunk, logger)));
+	return createStore(reducers, composeEnhancers(applyMiddleware(thunk, logger)));
 }

@@ -22,5 +22,4 @@ export const getChatInfo = () => {
 //   async componentDidMount() {
 //     let data = await this.CountriesData()
 //     this.setState({CountriesData: data});
-
 //   }

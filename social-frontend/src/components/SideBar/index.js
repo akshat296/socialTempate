@@ -48,7 +48,7 @@ class Bar extends React.Component {
 
 
         }
-        const bar = (<div className='side'><DashBoard/></div>);
+        const bar = (<div className='side'><DashBoard /></div>);
 
         let topBar = (
             <NavBar toggle={this.toggleBar.bind(this)} navIcon={navIconClassName.join(' ')}
