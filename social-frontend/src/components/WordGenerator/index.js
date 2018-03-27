@@ -24,8 +24,8 @@ class WordGenerator extends Component {
            
             return (<span key={"word" + index}> {word} </span>);
         });
-
-        this.state.words.map((word, index) => {
+        console.log("hello ",this.props);
+        this.props.words.map((word, index) => {
            
             if (splitWords[index] === word) {
                 element[index] = (<span key={"word" + index} className="correct" > {splitWords[index]} </span>);
@@ -44,7 +44,7 @@ class WordGenerator extends Component {
 
 
 function mapStateToProps(state) {
-    console.log('my state==>', state);
+   
 
     return {
         words: state.word

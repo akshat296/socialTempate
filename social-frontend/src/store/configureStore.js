@@ -15,10 +15,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
 
 export default function configureStore(initialState) {
     const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk, logger)));
-    if (module.hot) {
-        module.hot.accept('../reducers', () =>
-            store.replaceReducer(require('../reducers').default)
-        );
-    }
+    // if (module.hot) {
+    //     module.hot.accept('../reducers', () =>
+    //         store.replaceReducer(require('../reducers').default)
+    //     );
+    // }
     return store;
 }
