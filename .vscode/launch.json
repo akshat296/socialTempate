@@ -74,11 +74,11 @@
             "type": "node",
             "request": "launch",
             "name": "Server-Backend",
-            "program": "${workspaceRoot}/snake-backend-api/server.js",
+            "program": "${workspaceRoot}/social-backend-api/server.js",
             "skipFiles": [
-                "${workspaceRoot}/snake-backend-api/node_modules/**/**/*.js",
+                "${workspaceRoot}/social-backend-api/node_modules/**/**/*.js",
                 "<node_internals>/**/*.js",
-                "${workspaceRoot}/snake-backend/lib/**/*.js"
+                "${workspaceRoot}/social-backend/lib/**/*.js"
             ]
         },
         {
